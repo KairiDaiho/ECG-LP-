@@ -307,6 +307,15 @@ body {
     width: 390px;
 }
 
+/* move-animation */
+.move-animation2 {
+    animation: moveUpDown 2s ease-in-out infinite;
+    width: 390px;
+    position: absolute;
+    top: 724px;
+    z-index: 1000;
+}
+
 /* タブメニューのスタイル */
 .tab-menu {
     display: flex;
@@ -363,14 +372,50 @@ body {
     align-items: center;
 }
 
-/* move-animation */
-.move-animation2 {
-    animation: moveUpDown 2s ease-in-out infinite;
-    width: 390px;
-    position: absolute;
-    top: 724px;
-    z-index: 1000;
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    15% {
+        transform: translateX(20px);
+    }
+    70% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
+
+.section10 {
+    position: relative;
+    overflow-x: auto;
+    height: 540px;
+}
+
+.move-animation3 {
+    animation: slide 2s ease-in-out infinite;
+    width: 250px;
+    position: relative;
+    left: 120px;
+    top: -3px;
+}
+
+.比較表 {
+    white-space: nowrap; /* 横方向に並べる */
+    touch-action: pan-x; /* タッチ操作でのスクロールを許可する */
+}
+
+.Section10-表 {
+    height: 525px;
+    width: 780px;
+    cursor: grab;
+    position: absolute;
+    top: -7px;
+    transition: left 0.1s ease-out; /* 左右に動かす時の滑らかなアニメーション */
+    display: inline-block; /* 横に並べるための設定 */
+}
+
 
 .SNS{
     position: absolute;
@@ -587,6 +632,10 @@ body {
 }
 
 .Section10{
+    width: 390px;
+}
+
+.名称未設定のデザイン{
     width: 390px;
 }
 

@@ -82,3 +82,43 @@ function closePopup(id) {
     document.getElementById(id).style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const draggable = document.querySelector('.Section10-表');
+    const container = document.querySelector('.比較表');
+    let startX, scrollLeft;
+
+    // タッチ開始イベント
+    const startTouch = (e) => {
+        if (e.touches.length < 2) return; // 二本指でなければ何もしない
+        startX = e.touches[0].pageX;
+        scrollLeft = draggable.offsetLeft;
+        e.preventDefault(); 
+    };
+
+    // タッチムーブイベント
+    const duringTouch = (e) => {
+        if (e.touches.length < 2) return; // 二本指でなければ何もしない
+        const x = e.touches[0].pageX;
+        const walk = (x - startX);
+        let newPosition = scrollLeft + walk;
+
+        // 境界チェック
+        const maxLeft = 0;
+        const maxRight = container.clientWidth - draggable.clientWidth;
+        newPosition = Math.max(maxLeft, Math.min(newPosition, maxRight));
+
+        draggable.style.left = `${newPosition}px`;
+        e.preventDefault(); 
+    };
+
+    // タッチエンドイベント
+    const endTouch = () => {
+        // タッチ終了時には特に処理しない
+    };
+
+    // イベントリスナーの設定
+    draggable.addEventListener('touchstart', startTouch, { passive: false });
+    window.addEventListener('touchmove', duringTouch, { passive: false });
+    window.addEventListener('touchend', endTouch);
+});
