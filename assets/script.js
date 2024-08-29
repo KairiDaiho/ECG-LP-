@@ -122,3 +122,18 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('touchmove', duringTouch, { passive: false });
     window.addEventListener('touchend', endTouch);
 });
+
+
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+    });
+
+    img.addEventListener('touchend', function(e) {
+        e.preventDefault();
+    });
+
+    img.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+});

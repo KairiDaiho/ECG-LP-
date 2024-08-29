@@ -676,6 +676,7 @@ body {
 }
 .Section1-1{
     width: 390px;
+    pointer-events: none;
 }
 
 .Section1-2{
@@ -743,3 +744,4 @@ body {
     position: relative;
     bottom: 36px;
 }
+
