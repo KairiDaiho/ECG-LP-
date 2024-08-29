@@ -279,10 +279,10 @@ body {
 
 @keyframes moveUpDown {
     0%, 100% {
-        transform: translateY(15px);
+        transform: translateY(10px);
     }
     50% {
-        transform: translateY(-25px);
+        transform: translateY(-30px);
     }
 }
 
@@ -310,7 +310,7 @@ body {
 .tab-button {
     cursor: pointer;
     width: 195px;
-    height: 127px;
+    height: 65px;
 }
 
 /* タブコンテンツのスタイル */
